@@ -1,0 +1,69 @@
+<div class="panel panel-default">
+   <form role="form" class="form-horizontal" ng-submit="submit()" name="criarparticipante">
+      <div class="panel panel-body">
+         <div class="panel panel-info">
+           <div class="panel-heading">
+             <h3 class="panel-title">Cadastro de Participantes</h3>
+           </div>
+           <div class="panel-body">
+               <legend>Dados do Participante</legend>
+               <fieldset>
+                  <div class="form-group">
+                     <label for="inputNomeP" class="col-lg-3 control-label">Nome Completo *</label>
+                     <div class="col-lg-9">
+                        <input type="text" class="form-control" id="inputNomeP" placeholder="Bruno Freitas" ng-model="member.name" ng-pattern="/^[A-Za-z \s]*$/" required>
+                     </div>
+                  </div>
+               </fieldset>
+               <fieldset>
+                  <div class="form-group">
+                     <label for="inputEmail" class="col-lg-3 control-label">Email *</label>
+                     <div class="col-lg-9">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="felipe.ishida@gmail.com" ng-model="member.email" required>
+                     </div>
+                  </div>
+               </fieldset>
+               <fieldset>
+                  <div class="form-group">
+                     <label for="inputTelp" class="col-lg-3 control-label">Telefone *</label>
+                     <div class="col-lg-9">
+                        <input type="text" class="form-control" id="inputTel" placeholder="11988887777" ng-pattern="member.phone" maxlength="11" ng-model="member.phone" required>
+                     </div>
+                  </div>
+               </fieldset>
+               <fieldset>
+                  <div class="form-group">
+                     <label class="col-lg-3 control-label">Sexo *</label>
+                     <div class="col-lg-9">
+                        <select name="gender" ng-model="member.gender" class="form-control m-b" required>
+                           <option>Masculino</option>
+                           <option>Feminino</option>
+                        </select>
+                     </div>
+                  </div>
+               </fieldset>
+               <fieldset>
+                  <div class="form-group">
+                     <label for="inputEnd" class="col-lg-3 control-label">CEP *</label>
+                     <div class="col-lg-3">
+                        <input type="text" class="form-control" id="inputCEP" placeholder="04664020" required maxlength="8" minlength="8" ng-pattern="/^[0-9]*$/" ng-model="member.zipCode">
+                     </div>
+                     <label for="inputEnd" class="col-lg-2 control-label">Numero Endereço</label>
+                     <div class="col-lg-4">
+                        <input type="text" class="form-control" id="inputComp" placeholder="512" ng-model="member.numberAddress" ng-pattern="/^[0-9]+$/" minlength="1"maxlength="5" required>
+                     </div>
+                  </div>
+               </fieldset>
+               <div class="text-right">
+                  <small class="text-right">Os campos marcados com * são obrigatórios. </small>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="panel panel-footer">
+         <button type="button" class="btn btn-default" ng-click="backToMain()">Voltar</button>
+         <button type="submit" class="btn btn-success" ng-disabled="criarparticipante.$invalid">Enviar</button>
+      </div>
+   </form>
+</div>
+
